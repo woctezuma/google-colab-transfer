@@ -20,7 +20,7 @@ pip install colab_transfer
 
 ## Usage
 
-### Get the path to the home folder of the local machine for your current session on Google Colaboratory
+### Get the path to the home folder of the local machine for your session on Google Colaboratory
 
 ```python
 import colab_transfer
