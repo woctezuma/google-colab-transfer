@@ -100,7 +100,7 @@ input_folder_name = 'dummy_folder/'
 
 colab_transfer.copy_folder_structure(
     source=drive_path + input_folder_name,
-    destination=colab_path,
+    destination=colab_path + input_folder_name,
 )
 ```
 
@@ -116,7 +116,7 @@ input_folder_name = 'dummy_folder/'
 
 colab_transfer.copy_folder_structure(
     source=colab_path + input_folder_name,
-    destination=drive_path,
+    destination=drive_path + input_folder_name,
 )
 ```
 
