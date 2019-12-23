@@ -1,4 +1,4 @@
-# Google-Colab-Transfer: transfer data between Colab & Drive
+# Google Colab Transfer: transfer data between Colab & Drive
 
 [![PyPI status][PyPI image]][PyPI]
 [![Build status][Build image]][Build]
@@ -11,10 +11,10 @@ This repository contains Python code to transfer data between [Google Colab](htt
 
 ## Installation
 
-The code is packaged for [PyPI](https://pypi.org/project/google-colab-transfer/), so that the installation consists in running:
+The code is packaged for [PyPI](https://pypi.org/project/colab_transfer/), so that the installation consists in running:
 
 ```bash
-pip install google-colab-transfer
+pip install colab_transfer
 ```
 
 ## Usage

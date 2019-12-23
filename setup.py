@@ -4,10 +4,12 @@ from distutils.core import setup
 import setuptools
 
 setup(
-    name='Google-Colab-Transfer',
-    packages=['google-colab-transfer'],
+    name='Google Colab Transfer',
+    packages=['colab_transfer'],
     install_requires=[
     ],
+    test_suite='nose.collector',
+    tests_require=['nose'],
     version='0.1.0',
     description='Transfer data between Colab and Drive.',
     long_description='Transfer data between Colab and Drive.',
