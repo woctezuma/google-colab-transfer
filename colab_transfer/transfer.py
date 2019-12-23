@@ -76,9 +76,15 @@ def copy_folder_structure(source=None,
             print('Copying {} to {}'.format(input_folder_name,
                                             output_folder_name))
 
-        shutil.copytree(src=input_folder_name,
-                        dst=output_folder_name,
-                        dirs_exist_ok=True)
+        try:
+            shutil.copytree(src=input_folder_name,
+                            dst=output_folder_name,
+                            dirs_exist_ok=True)
+        except TypeError:
+            # Python versions prior to 3.8 do not support the parameter 'dirs_exist_ok'.
+            shutil.copytree(src=input_folder_name,
+                            dst=output_folder_name,
+                            )
 
     return
 
