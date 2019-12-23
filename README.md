@@ -41,4 +41,4 @@ TODO
   [codecov-image]: https://codecov.io/gh/woctezuma/google-colab-transfer/branch/master/graph/badge.svg
 
   [codacy]: https://www.codacy.com/app/woctezuma/google-colab-transfer
-  [codacy-image]: https://api.codacy.com/project/badge/Grade/TODO
+  [codacy-image]: https://api.codacy.com/project/badge/Grade/8d61b0dec7c346289a73f4cc3a760c53
