@@ -25,7 +25,7 @@ pip install colab_transfer
 ```python
 import colab_transfer
 
-colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
+colab_path = colab_transfer.get_path_to_home_of_local_machine()
 ```
 
 ### Get the path to the home folder on Google Drive
@@ -33,7 +33,7 @@ colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
 ```python
 import colab_transfer
 
-drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+drive_path = colab_transfer.get_path_to_home_of_google_drive()
 ```
 
 ### Mount Google Drive
@@ -59,8 +59,8 @@ google_drive_is_mounted = colab_transfer.is_google_drive_mounted()
 ```python
 import colab_transfer
 
-colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
-drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+colab_path = colab_transfer.get_path_to_home_of_local_machine()
+drive_path = colab_transfer.get_path_to_home_of_google_drive()
 
 input_file_name = 'dummy_file.txt'
 
@@ -76,8 +76,8 @@ colab_transfer.copy_file(
 ```python
 import colab_transfer
 
-colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
-drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+colab_path = colab_transfer.get_path_to_home_of_local_machine()
+drive_path = colab_transfer.get_path_to_home_of_google_drive()
 
 input_file_name = 'dummy_file.txt'
 
@@ -93,8 +93,8 @@ colab_transfer.copy_file(
 ```python
 import colab_transfer
 
-colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
-drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+colab_path = colab_transfer.get_path_to_home_of_local_machine()
+drive_path = colab_transfer.get_path_to_home_of_google_drive()
 
 input_folder_name = 'dummy_folder/'
 
@@ -109,8 +109,8 @@ colab_transfer.copy_folder_structure(
 ```python
 import colab_transfer
 
-colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
-drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+colab_path = colab_transfer.get_path_to_home_of_local_machine()
+drive_path = colab_transfer.get_path_to_home_of_google_drive()
 
 input_folder_name = 'dummy_folder/'
 
