@@ -17,9 +17,14 @@ class TestTransferMethods(unittest.TestCase):
         inner_input_data_folder_name = input_data_folder_name + 'inner_folder/'
         Path(inner_input_data_folder_name).mkdir(exist_ok=True, parents=True)
 
+        deeper_input_data_folder_name = input_data_folder_name + 'second_inner_folder/deeper_folder/'
+        Path(deeper_input_data_folder_name).mkdir(exist_ok=True, parents=True)
+
         Path(input_data_folder_name + 'dummy_file.txt').touch(exist_ok=True)
 
         Path(inner_input_data_folder_name + 'inner_dummy_file.txt').touch(exist_ok=True)
+
+        Path(deeper_input_data_folder_name + 'deep_inner_dummy_file.txt').touch(exist_ok=True)
 
         return
 
@@ -57,6 +62,7 @@ class TestTransferMethods(unittest.TestCase):
         for input_file_name in [
             'dummy_file.txt',
             'inner_folder/inner_dummy_file.txt',
+            'second_inner_folder/deeper_folder/deep_inner_dummy_file.txt',
         ]:
             path_to_output_file = output_data_folder_name + input_file_name
 
