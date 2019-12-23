@@ -38,6 +38,38 @@ def copy_file(file_name,
     return
 
 
+def copy_folder(folder_name,
+                source=None,
+                destination=None,
+                verbose=True):
+    if source is None:
+        source = get_path_to_home_of_google_drive()
+
+    if destination is None:
+        destination = get_path_to_home_of_local_machine()
+    else:
+        Path(destination).mkdir(parents=True, exist_ok=True)
+
+    input_folder_name = source + folder_name
+    output_folder_name = destination + folder_name
+
+    if Path(output_folder_name).exists():
+        if verbose:
+            print('Folder {} already exists. Copy skipped.'.format(output_folder_name))
+    else:
+        if verbose:
+            print('Copying {} to {}'.format(input_folder_name,
+                                            output_folder_name))
+
+        try:
+            shutil.copytree(src=input_folder_name,
+                            dst=output_folder_name)
+        except FileNotFoundError:
+            print('Folder {} could not be found. Copy aborted.'.format(input_folder_name))
+
+    return
+
+
 def copy_folder_structure(source=None,
                           destination=None,
                           verbose=True):
@@ -69,22 +101,10 @@ def copy_folder_structure(source=None,
     for f_name in root_folders:
         folder_name = os.path.basename(f_name) + '/'
 
-        input_folder_name = source + folder_name
-        output_folder_name = destination + folder_name
-
-        if verbose:
-            print('Copying {} to {}'.format(input_folder_name,
-                                            output_folder_name))
-
-        try:
-            shutil.copytree(src=input_folder_name,
-                            dst=output_folder_name,
-                            dirs_exist_ok=True)
-        except TypeError:
-            # Python versions prior to 3.8 do not support the parameter 'dirs_exist_ok'.
-            shutil.copytree(src=input_folder_name,
-                            dst=output_folder_name,
-                            )
+        copy_folder(folder_name,
+                    source=source,
+                    destination=destination,
+                    verbose=verbose)
 
     return
 
