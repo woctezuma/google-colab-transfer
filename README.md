@@ -20,10 +20,104 @@ pip install colab_transfer
 
 ## Usage
 
-### TODO
+### Get the path to the home folder of the local machine for your current session on Google Colaboratory
 
 ```python
-TODO
+import colab_transfer
+
+colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
+```
+
+### Get the path to the home folder on Google Drive
+
+```python
+import colab_transfer
+
+drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+```
+
+### Mount Google Drive
+
+NB: you will have to manually input the authorization token.
+
+```python
+import colab_transfer
+
+colab_transfer.mount_google_drive()
+```
+
+### Check whether Google Drive is mounted
+
+```python
+import colab_transfer
+
+google_drive_is_mounted = colab_transfer.is_google_drive_mounted()
+```
+
+### Copy a file from Drive to Colaboratory 
+
+```python
+import colab_transfer
+
+colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
+drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+
+input_file_name = 'dummy_file.txt'
+
+colab_transfer.copy_file(
+    file_name=input_file_name,
+    source=drive_path,
+    destination=colab_path,
+)
+```
+
+### Copy a file from Colaboratory to Drive 
+
+```python
+import colab_transfer
+
+colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
+drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+
+input_file_name = 'dummy_file.txt'
+
+colab_transfer.copy_file(
+    file_name=input_file_name,
+    source=colab_path,
+    destination=drive_path,
+)
+```
+
+### Copy a folder structure from Drive to Colaboratory 
+
+```python
+import colab_transfer
+
+colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
+drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+
+input_folder_name = 'dummy_folder/'
+
+colab_transfer.copy_folder_structure(
+    source=drive_path + input_folder_name,
+    destination=colab_path,
+)
+```
+
+### Copy a folder structure from Colaboratory to Drive 
+
+```python
+import colab_transfer
+
+colab_path = colab_transfer.test_get_path_to_home_of_local_machine()
+drive_path = colab_transfer.test_get_path_to_home_of_google_drive()
+
+input_folder_name = 'dummy_folder/'
+
+colab_transfer.copy_folder_structure(
+    source=colab_path + input_folder_name,
+    destination=drive_path,
+)
 ```
 
 <!-- Definitions -->
