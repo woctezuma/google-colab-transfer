@@ -38,7 +38,7 @@ drive_path = colab_transfer.get_path_to_home_of_google_drive()
 
 ### Mount Google Drive
 
-NB: you will have to manually input the authorization token.
+NB: you will have to manually input the authorization code.
 
 ```python
 import colab_transfer
