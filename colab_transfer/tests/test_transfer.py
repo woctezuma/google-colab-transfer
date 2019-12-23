@@ -27,6 +27,7 @@ class TestTransferMethods(unittest.TestCase):
         self.create_dummy_data()
 
         input_file_name = 'dummy_file.txt'
+
         input_folder = 'dummy_data_for_unit_test/input/'
 
         output_data_folder_name = self.get_dummy_data_root() + 'output/'
@@ -53,11 +54,12 @@ class TestTransferMethods(unittest.TestCase):
             destination=output_data_folder_name,
         )
 
-        for relative_path_to_file in [
+        for input_file_name in [
             'dummy_file.txt',
             'inner_folder/inner_dummy_file.txt',
         ]:
-            path_to_output_file = output_data_folder_name + relative_path_to_file
+            path_to_output_file = output_data_folder_name + input_file_name
+
             self.assertTrue(Path(path_to_output_file).exists())
 
 
