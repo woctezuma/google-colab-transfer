@@ -2,6 +2,7 @@
 
 [![PyPI status][pypi-image]][pypi]
 [![Build status][build-image]][build]
+[![Publish status][publish-image]][build]
 [![Updates][dependency-image]][pyup]
 [![Python 3][python3-image]][pyup]
 [![Code coverage][codecov-image]][codecov]
@@ -32,6 +33,7 @@ TODO
 
   [build]: <https://github.com/woctezuma/google-colab-transfer/actions>
   [build-image]: <https://github.com/woctezuma/google-colab-transfer/workflows/Python package/badge.svg?branch=master>
+  [publish-image]: <https://github.com/woctezuma/google-colab-transfer/workflows/Upload Python Package/badge.svg?branch=master>
 
   [pyup]: https://pyup.io/repos/github/woctezuma/google-colab-transfer/
   [dependency-image]: https://pyup.io/repos/github/woctezuma/google-colab-transfer/shield.svg
