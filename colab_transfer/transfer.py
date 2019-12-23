@@ -23,7 +23,7 @@ def copy_file(file_name,
 
     if Path(output_file_name).exists():
         if verbose:
-            print('File {} already exists.'.format(output_file_name))
+            print('File {} already exists. Copy skipped.'.format(output_file_name))
     else:
         if verbose:
             print('Copying {} to {}'.format(input_file_name,
@@ -33,7 +33,7 @@ def copy_file(file_name,
             shutil.copyfile(input_file_name,
                             output_file_name)
         except FileNotFoundError:
-            print('File {} could not be found.'.format(input_file_name))
+            print('File {} could not be found. Copy aborted.'.format(input_file_name))
 
     return
 
