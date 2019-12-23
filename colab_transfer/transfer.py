@@ -38,9 +38,17 @@ def copy_file(file_name,
     return
 
 
-def copy_folder_structure(source,
-                          destination,
+def copy_folder_structure(source=None,
+                          destination=None,
                           verbose=True):
+    if source is None:
+        source = get_path_to_home_of_google_drive()
+
+    if destination is None:
+        destination = get_path_to_home_of_local_machine()
+    else:
+        Path(destination).mkdir(parents=True, exist_ok=True)
+
     files_and_folders = glob.glob(source + '*')
 
     root_files = glob.glob(source + '*.*')
