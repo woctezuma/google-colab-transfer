@@ -28,8 +28,8 @@ TODO
 
 <!-- Definitions -->
 
-  [pypi]: https://pypi.python.org/pypi/google-colab-transfer
-  [pypi-image]: https://badge.fury.io/py/google-colab-transfer.svg
+  [pypi]: https://pypi.python.org/pypi/colab_transfer
+  [pypi-image]: https://badge.fury.io/py/colab_transfer.svg
 
   [build]: <https://github.com/woctezuma/google-colab-transfer/actions>
   [build-image]: <https://github.com/woctezuma/google-colab-transfer/workflows/Python package/badge.svg?branch=master>
