@@ -61,13 +61,16 @@ def copy_folder_structure(source,
     for f_name in root_folders:
         folder_name = os.path.basename(f_name) + '/'
 
-        for file_name in glob.glob(f_name + '/*'):
-            file_name = os.path.basename(file_name)
+        input_folder_name = source + folder_name
+        output_folder_name = destination + folder_name
 
-            copy_file(file_name,
-                      source=source + folder_name,
-                      destination=destination + folder_name,
-                      verbose=verbose)
+        if verbose:
+            print('Copying {} to {}'.format(input_folder_name,
+                                            output_folder_name))
+
+        shutil.copytree(src=input_folder_name,
+                        dst=output_folder_name,
+                        dirs_exist_ok=True)
 
     return
 
