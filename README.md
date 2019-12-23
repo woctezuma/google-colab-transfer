@@ -12,7 +12,7 @@ This repository contains Python code to transfer data between [Google Colab](htt
 
 ## Installation
 
-The code is packaged for [PyPI](https://pypi.org/project/colab_transfer/), so that the installation consists in running:
+The code is packaged for [PyPI](https://pypi.org/project/Google-Colab-Transfer/), so that the installation consists in running:
 
 ```bash
 pip install colab_transfer
@@ -28,8 +28,8 @@ TODO
 
 <!-- Definitions -->
 
-  [pypi]: https://pypi.python.org/pypi/colab_transfer
-  [pypi-image]: https://badge.fury.io/py/colab_transfer.svg
+  [pypi]: https://pypi.python.org/pypi/Google-Colab-Transfer
+  [pypi-image]: https://badge.fury.io/py/Google-Colab-Transfer.svg
 
   [build]: <https://github.com/woctezuma/google-colab-transfer/actions>
   [build-image]: <https://github.com/woctezuma/google-colab-transfer/workflows/Python package/badge.svg?branch=master>
