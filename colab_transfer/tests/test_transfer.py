@@ -31,8 +31,6 @@ class TestTransferMethods(unittest.TestCase):
 
         output_data_folder_name = self.get_dummy_data_root() + 'output/'
 
-        Path(output_data_folder_name).mkdir(exist_ok=True, parents=True)
-
         colab_transfer.copy_file(
             file_name=input_file_name,
             source=input_folder,
@@ -49,8 +47,6 @@ class TestTransferMethods(unittest.TestCase):
         input_folder = 'dummy_data_for_unit_test/input/'
 
         output_data_folder_name = self.get_dummy_data_root() + 'output/'
-
-        Path(output_data_folder_name).mkdir(exist_ok=True, parents=True)
 
         colab_transfer.copy_folder_structure(
             source=input_folder,
