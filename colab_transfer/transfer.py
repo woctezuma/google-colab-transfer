@@ -3,7 +3,7 @@ import os
 import shutil
 from pathlib import Path
 
-from .utils import get_path_to_home_of_google_drive, get_path_to_home_of_local_machine
+from colab_transfer.utils import get_path_to_home_of_google_drive, get_path_to_home_of_local_machine
 
 
 def copy_file(file_name,

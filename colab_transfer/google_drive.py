@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from .utils import get_path_to_root_of_google_drive
+from colab_transfer.utils import get_path_to_root_of_google_drive
 
 try:
     from google.colab import drive
