@@ -104,6 +104,23 @@ colab_transfer.copy_folder_structure(
 )
 ```
 
+Alternatively:
+
+```python
+import colab_transfer
+
+colab_path = colab_transfer.get_path_to_home_of_local_machine()
+drive_path = colab_transfer.get_path_to_home_of_google_drive()
+
+input_folder_name = 'dummy_folder/'
+
+colab_transfer.copy_folder(
+    folder_name=input_folder_name,
+    source=drive_path,
+    destination=colab_path,
+)
+```
+
 ### Copy a folder structure from Colaboratory to Drive 
 
 ```python
@@ -117,6 +134,23 @@ input_folder_name = 'dummy_folder/'
 colab_transfer.copy_folder_structure(
     source=colab_path + input_folder_name,
     destination=drive_path + input_folder_name,
+)
+```
+
+Alternatively:
+
+```python
+import colab_transfer
+
+colab_path = colab_transfer.get_path_to_home_of_local_machine()
+drive_path = colab_transfer.get_path_to_home_of_google_drive()
+
+input_folder_name = 'dummy_folder/'
+
+colab_transfer.copy_folder(
+    folder_name=input_folder_name,
+    source=colab_path,
+    destination=drive_path,
 )
 ```
 
