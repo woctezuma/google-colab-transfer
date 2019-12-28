@@ -10,6 +10,8 @@
   
 This repository contains Python code to transfer data between [Google Colab](https://colab.research.google.com) and [Google Drive](https://www.google.com/drive/).
 
+> Disclaimer: If files or folders already exist at the destination, then they will not be overwritten. If you want to force an update, ensure that you delete them first.
+
 ## Installation
 
 The code is packaged for [PyPI](https://pypi.org/project/Google-Colab-Transfer/), so that the installation consists in running:
