@@ -3,6 +3,7 @@ import os
 import shutil
 from pathlib import Path
 
+from colab_transfer.google_drive import mount_google_drive, is_google_drive_mounted
 from colab_transfer.utils import get_path_to_home_of_google_drive, get_path_to_home_of_local_machine
 
 
@@ -10,6 +11,9 @@ def copy_file(file_name,
               source=None,
               destination=None,
               verbose=True):
+    if not is_google_drive_mounted():
+        mount_google_drive()
+
     if source is None:
         source = get_path_to_home_of_google_drive()
 
@@ -42,6 +46,9 @@ def copy_folder(folder_name,
                 source=None,
                 destination=None,
                 verbose=True):
+    if not is_google_drive_mounted():
+        mount_google_drive()
+
     if source is None:
         source = get_path_to_home_of_google_drive()
 
@@ -73,6 +80,9 @@ def copy_folder(folder_name,
 def copy_folder_structure(source=None,
                           destination=None,
                           verbose=True):
+    if not is_google_drive_mounted():
+        mount_google_drive()
+
     if source is None:
         source = get_path_to_home_of_google_drive()
 
