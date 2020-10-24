@@ -18,9 +18,7 @@ def mount_google_drive():
 
 
 def is_google_drive_mounted():
-    google_drive_is_mounted = Path(get_path_to_root_of_google_drive()).exists()
-
-    return google_drive_is_mounted
+    return Path(get_path_to_root_of_google_drive()).exists()
 
 
 def main():

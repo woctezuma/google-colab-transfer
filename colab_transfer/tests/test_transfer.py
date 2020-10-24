@@ -7,9 +7,7 @@ import colab_transfer
 class TestTransferMethods(unittest.TestCase):
 
     def get_dummy_data_root(self):
-        data_root_folder_name = 'dummy_data_for_unit_test/'
-
-        return data_root_folder_name
+        return 'dummy_data_for_unit_test/'
 
     def create_dummy_data(self):
         input_data_folder_name = self.get_dummy_data_root() + 'input/'
