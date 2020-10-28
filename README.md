@@ -2,7 +2,6 @@
 
 [![PyPI status][pypi-image]][pypi]
 [![Build status][build-image]][build]
-[![Publish status][publish-image]][build]
 [![Updates][dependency-image]][pyup]
 [![Python 3][python3-image]][pyup]
 [![Code coverage][codecov-image]][codecov]
