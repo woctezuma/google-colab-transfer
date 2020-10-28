@@ -1,28 +1,29 @@
-from distutils.core import setup
-
-# noinspection PyUnresolvedReferences
 import setuptools
 
-setup(
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
     name='Google Colab Transfer',
-    packages=['colab_transfer'],
+    version='0.1.5',
+    author='Wok',
+    author_email='wok@tuta.io',
+    description='Transfer data between Colab and Drive.',
+    keywords=['google-colab', 'google-colaboratory', 'google-drive'],
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url='https://github.com/woctezuma/google-colab-transfer',
+    download_url='https://github.com/woctezuma/google-colab-transfer/archive/0.1.5.tar.gz',
+    packages=setuptools.find_packages(),
     install_requires=[
     ],
     test_suite='nose.collector',
     tests_require=['nose'],
-    version='0.1.5',
-    description='Transfer data between Colab and Drive.',
-    long_description='Transfer data between Colab and Drive.',
-    long_description_content_type='text/x-rst',
-    author='Wok',
-    author_email='wok@tuta.io',
-    url='https://github.com/woctezuma/google-colab-transfer',
-    download_url='https://github.com/woctezuma/google-colab-transfer/archive/0.1.5.tar.gz',
-    keywords=['google-colab', 'google-colaboratory', 'google-drive'],
     classifiers=[
         'Development Status :: 4 - Beta',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3',
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
+    python_requires='>=3',
 )
-
