@@ -1,4 +1,4 @@
-# Google Colab Transfer: transfer data between Colab & Drive
+# Colab Transfer: transfer data between Colab & Drive
 
 [![PyPI status][pypi-image]][pypi]
 [![Build status][build-image]][build]
