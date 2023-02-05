@@ -1,11 +1,10 @@
+from contextlib import suppress
 from pathlib import Path
 
 from colab_transfer.utils import get_path_to_root_of_google_drive
 
-try:
+with suppress(ModuleNotFoundError):
     from google.colab import drive
-except ModuleNotFoundError:
-    pass
 
 
 def mount_google_drive():
