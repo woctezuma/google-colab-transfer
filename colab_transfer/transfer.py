@@ -4,13 +4,13 @@ import shutil
 from pathlib import Path
 
 from colab_transfer.google_drive import mount_google_drive, is_google_drive_mounted
-from colab_transfer.utils import get_path_to_home_of_google_drive, get_path_to_home_of_local_machine
+from colab_transfer.utils import (
+    get_path_to_home_of_google_drive,
+    get_path_to_home_of_local_machine,
+)
 
 
-def copy_file(file_name,
-              source=None,
-              destination=None,
-              verbose=True):
+def copy_file(file_name, source=None, destination=None, verbose=True):
     if not is_google_drive_mounted():
         mount_google_drive()
 
@@ -30,22 +30,17 @@ def copy_file(file_name,
             print('File {} already exists. Copy skipped.'.format(output_file_name))
     else:
         if verbose:
-            print('Copying {} to {}'.format(input_file_name,
-                                            output_file_name))
+            print('Copying {} to {}'.format(input_file_name, output_file_name))
 
         try:
-            shutil.copyfile(input_file_name,
-                            output_file_name)
+            shutil.copyfile(input_file_name, output_file_name)
         except FileNotFoundError:
             print('File {} could not be found. Copy aborted.'.format(input_file_name))
 
     return
 
 
-def copy_folder(folder_name,
-                source=None,
-                destination=None,
-                verbose=True):
+def copy_folder(folder_name, source=None, destination=None, verbose=True):
     if not is_google_drive_mounted():
         mount_google_drive()
 
@@ -65,21 +60,19 @@ def copy_folder(folder_name,
             print('Folder {} already exists. Copy skipped.'.format(output_folder_name))
     else:
         if verbose:
-            print('Copying {} to {}'.format(input_folder_name,
-                                            output_folder_name))
+            print('Copying {} to {}'.format(input_folder_name, output_folder_name))
 
         try:
-            shutil.copytree(src=input_folder_name,
-                            dst=output_folder_name)
+            shutil.copytree(src=input_folder_name, dst=output_folder_name)
         except FileNotFoundError:
-            print('Folder {} could not be found. Copy aborted.'.format(input_folder_name))
+            print(
+                'Folder {} could not be found. Copy aborted.'.format(input_folder_name),
+            )
 
     return
 
 
-def copy_folder_structure(source=None,
-                          destination=None,
-                          verbose=True):
+def copy_folder_structure(source=None, destination=None, verbose=True):
     if not is_google_drive_mounted():
         mount_google_drive()
 
@@ -103,18 +96,17 @@ def copy_folder_structure(source=None,
     for f_name in root_files:
         file_name = os.path.basename(f_name)
 
-        copy_file(file_name,
-                  source=source,
-                  destination=destination,
-                  verbose=verbose)
+        copy_file(file_name, source=source, destination=destination, verbose=verbose)
 
     for f_name in root_folders:
         folder_name = os.path.basename(f_name) + '/'
 
-        copy_folder(folder_name,
-                    source=source,
-                    destination=destination,
-                    verbose=verbose)
+        copy_folder(
+            folder_name,
+            source=source,
+            destination=destination,
+            verbose=verbose,
+        )
 
     return
 

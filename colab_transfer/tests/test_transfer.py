@@ -5,7 +5,6 @@ import colab_transfer
 
 
 class TestTransferMethods(unittest.TestCase):
-
     def get_dummy_data_root(self):
         data_root_folder_name = 'dummy_data_for_unit_test/'
 
@@ -17,14 +16,18 @@ class TestTransferMethods(unittest.TestCase):
         inner_input_data_folder_name = input_data_folder_name + 'inner_folder/'
         Path(inner_input_data_folder_name).mkdir(exist_ok=True, parents=True)
 
-        deeper_input_data_folder_name = input_data_folder_name + 'second_inner_folder/deeper_folder/'
+        deeper_input_data_folder_name = (
+            input_data_folder_name + 'second_inner_folder/deeper_folder/'
+        )
         Path(deeper_input_data_folder_name).mkdir(exist_ok=True, parents=True)
 
         Path(input_data_folder_name + 'dummy_file.txt').touch(exist_ok=True)
 
         Path(inner_input_data_folder_name + 'inner_dummy_file.txt').touch(exist_ok=True)
 
-        Path(deeper_input_data_folder_name + 'deep_inner_dummy_file.txt').touch(exist_ok=True)
+        Path(deeper_input_data_folder_name + 'deep_inner_dummy_file.txt').touch(
+            exist_ok=True,
+        )
 
         return
 

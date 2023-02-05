@@ -12,7 +12,9 @@ def mount_google_drive():
     try:
         drive.mount(get_path_to_root_of_google_drive())
     except NameError:
-        print('Google Drive cannot be mounted. Please ensure that a session of Colaboratory is running.')
+        print(
+            'Google Drive cannot be mounted. Please ensure that a session of Colaboratory is running.',
+        )
 
     return
 
