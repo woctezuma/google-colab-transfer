@@ -28,7 +28,7 @@ def is_google_drive_mounted():
 def main():
     mount_google_drive()
 
-    print('Is Google Drive mounted? {}'.format(is_google_drive_mounted()))
+    print(f'Is Google Drive mounted? {is_google_drive_mounted()}')
 
     return True
 

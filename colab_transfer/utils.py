@@ -29,7 +29,7 @@ def main():
         get_path_to_home_of_local_machine(),
         get_path_to_home_of_google_drive(),
     ]:
-        print('Folder: {}'.format(folder))
+        print(f'Folder: {folder}')
 
     return True
 

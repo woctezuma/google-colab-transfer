@@ -3,7 +3,7 @@ import os
 import shutil
 from pathlib import Path
 
-from colab_transfer.google_drive import mount_google_drive, is_google_drive_mounted
+from colab_transfer.google_drive import is_google_drive_mounted, mount_google_drive
 from colab_transfer.utils import (
     get_path_to_home_of_google_drive,
     get_path_to_home_of_local_machine,
@@ -27,15 +27,15 @@ def copy_file(file_name, source=None, destination=None, verbose=True):
 
     if Path(output_file_name).exists():
         if verbose:
-            print('File {} already exists. Copy skipped.'.format(output_file_name))
+            print(f'File {output_file_name} already exists. Copy skipped.')
     else:
         if verbose:
-            print('Copying {} to {}'.format(input_file_name, output_file_name))
+            print(f'Copying {input_file_name} to {output_file_name}')
 
         try:
             shutil.copyfile(input_file_name, output_file_name)
         except FileNotFoundError:
-            print('File {} could not be found. Copy aborted.'.format(input_file_name))
+            print(f'File {input_file_name} could not be found. Copy aborted.')
 
     return
 
@@ -57,16 +57,16 @@ def copy_folder(folder_name, source=None, destination=None, verbose=True):
 
     if Path(output_folder_name).exists():
         if verbose:
-            print('Folder {} already exists. Copy skipped.'.format(output_folder_name))
+            print(f'Folder {output_folder_name} already exists. Copy skipped.')
     else:
         if verbose:
-            print('Copying {} to {}'.format(input_folder_name, output_folder_name))
+            print(f'Copying {input_folder_name} to {output_folder_name}')
 
         try:
             shutil.copytree(src=input_folder_name, dst=output_folder_name)
         except FileNotFoundError:
             print(
-                'Folder {} could not be found. Copy aborted.'.format(input_folder_name),
+                f'Folder {input_folder_name} could not be found. Copy aborted.',
             )
 
     return
@@ -90,8 +90,8 @@ def copy_folder_structure(source=None, destination=None, verbose=True):
     root_folders = set(files_and_folders).difference(root_files)
 
     if verbose:
-        print('Files: {}'.format(root_files))
-        print('Folders: {}'.format(root_folders))
+        print(f'Files: {root_files}')
+        print(f'Folders: {root_folders}')
 
     for f_name in root_files:
         file_name = os.path.basename(f_name)
