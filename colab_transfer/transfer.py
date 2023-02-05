@@ -1,5 +1,4 @@
 import glob
-import os
 import shutil
 from pathlib import Path
 
@@ -94,12 +93,12 @@ def copy_folder_structure(source=None, destination=None, verbose=True):
         print(f'Folders: {root_folders}')
 
     for f_name in root_files:
-        file_name = os.path.basename(f_name)
+        file_name = Path(f_name).name
 
         copy_file(file_name, source=source, destination=destination, verbose=verbose)
 
     for f_name in root_folders:
-        folder_name = os.path.basename(f_name) + '/'
+        folder_name = Path(f_name).name + '/'
 
         copy_folder(
             folder_name,
